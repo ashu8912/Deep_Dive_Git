@@ -206,3 +206,33 @@ Can i create a tag from a past commit
 Yes.
 git tag <tag name> <reference of commit> 
 
+
+git log --since="yesterday"
+git log --since="2 weeks ago" 
+
+unstaged changes 
+git diff
+staged changes 
+git diff --staged
+
+
+to check what branches were merged on master 
+git branch --merged master
+
+which branch are not merged with master yet.
+git branch --no-merged master
+
+
+TO Undo uncomitted changes in the working directory
+git checkout -- <File Name>
+
+
+To undo commited changes in the working directory
+git revert <commit hash> this will commit the changes as well
+if we dont want to commit we can supply the -n flag
+and than manually commit at a later time
+
+
+git reset --hard <commit hash>
+takes you back to a previous timestamp in our code
+all commits in between are deleted
