@@ -92,6 +92,7 @@ And The Repository(
 
 
 Moving Files in and out of the staging area
+git add -P (To move parts of file to staging area)
 git add <File>
 delete a file in the next commit
 git rm --cached <File>(To Keep the file)
@@ -107,3 +108,40 @@ it is handy when we accidentally made changes to some other branch
 and now want to take our work done to next branch without commiting in the 
 current branch.
 -saves uncomitted work
+
+git stash
+
+list changes
+git stash ist
+
+pop from stash
+git stash pop
+
+apply the stash
+git stash apply (this applies stash without deleting stash content)
+
+git stashes only those files that are commited or are in the staging area
+to stash files that are untracked we can do 
+git stash --include-untracked
+
+
+To Keep All Files even ignored files
+git stash --all
+
+To Remove the last stash
+git stash drop
+
+Remove all stash
+git stash clear
+
+
+Name Stashes for easy reference
+git stash save "Name Of Stash"
+
+
+
+
+Three Types of git references
+Tags and annotated Tags
+Branches
+Head
