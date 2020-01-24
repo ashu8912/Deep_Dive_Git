@@ -1,0 +1,109 @@
+Git Is a Distributed Version Control System.
+
+How Git Stores Information
+git is a key value Store
+value=data
+key=hash
+you can use the key to retreive the content
+
+
+
+The Key is a cryptographic hash function
+given a piece of data it produces 40 digit hexadecimal number
+The value should always be the same if the hash is same.
+
+
+
+
+Git Blobs and trees
+
+git stores data in a blob along with metadata in a header
+There is a identifier blob 
+Size Of The content
+\0 delimiter
+and the content
+
+
+git uses a plumbing function under the hood that is hash-object
+to ask for sha1 content
+so we can use 
+ "echo 'Hello World' | git hash-object --stdin"
+ this spits out the hash for the above content
+557db03de997c86a4a028e1ebd3a1ceb225be238
+
+
+where does git stores data?
+in the .git file
+
+If we want to see our blob we can use the tree command
+"tree .git" =>this gives the structure of the .git
+
+the blob is stored under object 
+A Blob is a Binary Large Object
+but the blob is missing information like 
+filenames or directory structures git uses tree data structure 
+to store that data
+
+A tree contains
+A pointer to Blob and o other trees
+
+and also tree stores the metadata like
+type of pointer 
+filename or directory name
+mode(executable file,symbolic link etc..) 
+
+
+
+
+Commit Object
+
+a commit points to 
+- A tree
+and contains a metadata
+-author and commiter
+-date
+-message
+-parent commit 
+
+the sha1 of the commit is the hash of all the above information
+
+
+why cant we change commits
+if you change any data about the commit the commit will have a
+new sha1 hash
+even if files data don't change the created date will
+
+
+git branch branch_name is used to create a branch without 
+switching to it
+git checkout -b banch_name is used to create a branch and 
+also switch to it
+
+
+There Are three areas where code lives
+
+One is The Working Area(All code here is not handled by git)(These are also called untracked files)
+staging Area(What files are going to be the part of next commit,The stagin area is how git knows what will change
+between the current commit and the next commit )
+And The Repository(
+  The File Git knows about,
+  contains All The Commits
+)
+
+
+Moving Files in and out of the staging area
+git add <File>
+delete a file in the next commit
+git rm --cached <File>(To Keep the file)
+git rm -f <File>(To Force removal)
+
+rename a file in the next commit
+git mv <File>
+
+
+git stash
+stashing is when you want to save the changes made by you
+it is handy when we accidentally made changes to some other branch
+and now want to take our work done to next branch without commiting in the 
+current branch.
+-saves uncomitted work

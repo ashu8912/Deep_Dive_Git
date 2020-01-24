@@ -1,0 +1,17 @@
+What is git and git under the hood.
+Working Area,Staging area,Repository.
+Staging Area Deep Dive.
+References,Commits,Branches.
+Stashing.
+Merging+Rebasing.
+History + Diffs.
+Fixing Mistakes.
+Rebase.
+Forks,Remote Repositories.
+The Danger Zone.
+Advanced Tools.
+Customization-config,ignore,hooks,templates.
+Social Git-integrationGithub with CI tools.
+Advance Github working with github api
+
+
