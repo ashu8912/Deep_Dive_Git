@@ -145,3 +145,64 @@ Three Types of git references
 Tags and annotated Tags
 Branches
 Head
+
+What's A Branch
+
+a branch is a pointer to a particular commit 
+The pointer of the current branch changes as new commits are 
+made 
+
+
+
+What are git Tags
+tagging in git or any other Version controls refers to creating 
+specific points in history for your repository/data
+this is usually done to mark release points 
+(v1.0,v1.1...)
+
+
+When To Create Tag?
+1.when you want to create a release point for stable Version
+of your code.
+2.when you want to create a historic point for your code/data
+that you can refer at any future time(to restore your data)
+
+
+Annotated Tags
+An annotated tag creates an additional tag object in the Git
+repository, which allows you to store information associated
+with the tag itself. This may include release notes, 
+the meta-information about the release, and optionally 
+a signature to verify the authenticity of the commit to which it points
+git tag -a v1.1 -m "tag for release ver 1.1"
+
+How to create tags in Git.
+Step1:
+checkout the branch where you want to create the tag.
+step2:
+create tag with some name.
+git tag <tag name>
+example git tag v1.0
+
+
+to Push tags to remote 
+use git push origin <tag name>
+
+Delete tags
+git tag -d v1.0
+git tag --delete v1.0
+
+To delete tags from remote
+git push origin -d v1.0
+
+
+How to checkout a tag?
+we can't checkout a tag but we can create a branch from a 
+tag and checkout that branch.
+
+git checkout -b <branch_name> <tag_name>
+
+Can i create a tag from a past commit
+Yes.
+git tag <tag name> <reference of commit> 
+
